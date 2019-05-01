@@ -10,7 +10,9 @@ Used Vue.js in order to create the web app.
 	I didn't have much experience with the framework. Just some very basic knowledge. So I thought it'd be helpful if I familiarize
 	myself with the framework further and go through the learning curve.
 Optimize the loading time
-	Lazy loads the content inside cards that helps in faster load times
+	All static assets are cached by the service worker in order to ensure faster load times. Used lighthouse to test and optimize the performance of the web app.
+	Lazy loads the content inside cards to ensure faster load times. Gets data from the LocalStorage while accessing previously loaded data which reduces the number
+	of database calls and makes it faster. 
 Responsive Design
 	I have strived to follow various material design guidelines and used cards to display the metrics and charts. This ensures more clarity and
 	a simple design that'll let the user focus on the content more easily irrespective of the device they are using.
@@ -18,6 +20,5 @@ Progressive Web App
 	I've been a huge fan of PWA's but had never actually got around to building one myself. With this app I managed to build my first PWA that
 	can be installed by the user.
 Offline Capable
-	Thanks to the Firebase SDK and the PWA's caching mechanisms I was able build in some offline capabilities. The app can cache all the Player Data from visited routes.
-	Players and can reload them offline. However the autocomplete search does not work offline unless the contents are loaded already. All other data is cached and can be
-	view offline.
+	Used LocalStorage in the browser in order to store the data previously loaded in the browser. Additionally, the service worker caches various static assets
+	used by the app in order to load the data offline. However, the Google Charts do not work offline as its against their Terms of Service and do not allow it.
